@@ -119,7 +119,7 @@ Tuliskan potongan kode atau perintah utama:
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/diagram-os.png)
+![Screenshot hasil](screenshots/linux.png)
 
 ---
 
@@ -148,6 +148,70 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 ---
 
+## Analisis 2
+
+**Kernel dan Arsitektur Sistem Operasi**
+
+**Kernel** adalah inti dari sistem operasi (OS) yang berfungsi sebagai penghubung antara perangkat keras (hardware) dan perangkat lunak (software) aplikasi. Kernel mengendalikan aspek penting dalam sistem dan menjalankan berbagai fungsi, seperti penjadwalan CPU, manajemen memori, serta pengolahan perangkat input/output (I/O).
+Dalam desain kernel modern, terdapat upaya lanjutan untuk mengimbangi empat isu krusial seperti kinerja, keandalan, keamanan (*diukur melalui Trusted Computing Base*/TCB), dan modularitas.
+
+Terdapat tiga arsitektur utama, yaitu **monolithic kernel, microkernel,** dan **layered architecture.**
+
+## Perbedaan Arsitektur Kernel
+
+**1. Monolithic Kernel**
+
+Monolithic kernel menggabungkan seluruh layanan inti sistem, seperti manajemen proses, memori, sistem file, *device drivers*, dan **networking stacks**, ke dalam satu program besar yang berjalan di ruang kernel yang sama.
+Metode komunikasi yang digunakan adalah pemanggilan fungsi langsung (*direct function calls*) antar-komponen, sehingga lebih efisien.
+**Kelebihan:**
+- Kinerja tinggi, karena tidak ada *overhead* dari komunikasi antar-proses (IPC) maupun *context switching.*
+**Kelemahan:**
+- Isolasi kesalahan buruk. Jika satu driver gagal, seluruh sistem bisa ikut terganggu (*kernel panic*).
+-	TCB besar, karena semua kode driver yang kompleks dijalankan dengan hak istimewa penuh, sehingga meningkatkan risiko serangan.
+**Contoh OS**: Linux, Unix Kernel, FreeBSD (umumnya menggunakan model monolithic modular dengan dukungan *Loadable Kernel Module*/LKM).
+ 	
+**2. Microkernel**
+
+Arsitektur microkernel berlandaskan prinsip minimalisme. Kernel inti hanya menyediakan mekanisme dasar seperti manajemen ruang alamat, manajemen *thread*, dan komunikasi antar-proses *(IPC)*.
+Layanan sistem operasi tradisional seperti *device driver* dan sistem file dijalankan sebagai proses terpisah (*server*) di ruang pengguna.
+Metode komunikasi dalam microkernel sepenuhnya mengandalkan *IPC* berbasis *message passing.*
+**Kelebihan:**
+- Keandalan dan keamanan lebih baik. Isolasi kesalahan kuat, karena kegagalan driver di *user space* hanya memengaruhi proses server tersebut, bukan kernel inti *(self-healing)*.
+- TCB sangat kecil, sehingga permukaan serangan lebih terbatas.
+**Kelemahan:**
+- Tantangan kinerja, karena *overhead* IPC melibatkan *context switching* dan penyalinan data antar-ruang alamat.
+**Contoh OS:** QNX, MINIX 3, keluarga kernel L4.
+
+**3. Layered Architecture**
+
+Model ini membagi sistem operasi ke dalam lapisan-lapisan hierarkis, di mana setiap lapisan menggunakan layanan dari lapisan tepat di bawahnya.
+Metode komunikasi dilakukan melalui antarmuka antar-lapisan atau menggunakan mekanisme *message passing* yang terstruktur.
+**Kelebihan:**
+- Struktur jelas, sehingga mempermudah pengembangan, verifikasi, dan *debugging.*
+**Kelemahan:**
+- Kinerja lebih rendah. Banyaknya switching antar-lapisan dapat menimbulkan overhead komunikasi substansial.
+**Contoh OS:** THE Multiprogramming System (kasus historis murni).
+
+## Analisis Relevansi untuk Sistem Modern
+
+Arsitektur yang paling relevan saat ini adalah **monolithic modular** dan **microkernel.**
+- **Monolithic modular** tetap menjadi pilihan dominan untuk sistem tujuan umum (**general purpose**) dan server, misalnya Linux. Kecepatan bawaan arsitektur monolithic, ditambah fleksibilitas modul melalui LKM, membuatnya unggul dalam hal *throughput data* dan kinerja absolut.
+- **Microkernel** lebih unggul untuk sistem misi kritis (*high-assurance*), real-time (RTOS), dan sistem tertanam (*embedded systems*), seperti QNX. Isolasi kesalahan yang kuat dan keandalan tinggi menjadikannya ideal di bidang otomotif, penerbangan, dan sistem yang tidak boleh gagal, meskipun ada sedikit kompromi pada kinerja.
+
+Selain dua model tersebut, berkembang juga **model hibrida** sebagai kompromi. Contohnya Windows NT dan XNU (macOS/iOS), yang menggabungkan kecepatan monolithic dengan struktur modular seperti microkernel. Namun, hibrida sering mengorbankan isolasi kesalahan sejati dari microkernel.
+
+## Kesimpulan
+
+Tidak ada satu model arsitektur kernel yang benar-benar unggul untuk semua kebutuhan:
+- **Monolithic modular** mendominasi pasar desktop dan server karena kinerja.
+- **Microkernel unggul** di pasar sistem kritis karena keandalan dan keamanannya.
+Masa depan arsitektur sistem operasi berfokus pada:
+- Mengurangi *overhead* IPC pada microkernel.
+- Meningkatkan keamanan monolithic, misalnya dengan penggunaan bahasa pemrograman aman memori seperti **Rust**.
+
+
+---
+
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 1. **Sistem operasi berperan sebagai penghubung utama antara pengguna dan perangkat keras komputer.**
@@ -158,17 +222,20 @@ Kernel menangani operasi penting seperti manajemen proses, memori, dan driver pe
 ---
 
 ## Quiz
-1. Sebutkan tiga fungsi utama sistem operasi.  
-   **Jawaban:**  
+1. Sebutkan tiga fungsi utama sistem operasi.
+   
+   **Jawaban:**
    - Mengelola sumber daya (CPU, memori, I/O, dan penyimpanan)
    - Menyediakan layanan sistem untuk aplikasi.
    - Menjadi antarmuka antara pengguna dan perangkat keras.
 2. Jelaskan perbedaan antara kernel mode dan user mode.
-   **Jawaban:** 
+   
+    **Jawaban:**
    - KERNEL MODE: akses penuh ke perangkat keras, di gunakan oleh kernel OS, jika error bisa merusak seluruh sistem.
    - USER MODE: akses terbatas, digunakan aplikasi, error hanya berdampak pada aplikasi tersebut.
 3. Sebutkan contoh OS dengan arsitektur monolithic dan microkernel.
-   **Jawaban:**  
+   
+   **Jawaban:**
    - Monolithic: Linux, MS-DOS, UNIX
    - Microkernel: MINIX, QNX, MacOS x (mach)
 
