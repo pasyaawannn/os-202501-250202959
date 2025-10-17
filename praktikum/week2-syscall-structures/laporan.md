@@ -66,9 +66,9 @@ git push origin main
 ## Kode / Perintah
 Tuliskan potongan kode atau perintah utama:
 ```bash
-uname -a
-lsmod | head
-dmesg | head
+strace ls
+strace -e trace=open,read,write,close cat /etc/passwd
+dmesg | tail -n 10
 ```
 
 ---
