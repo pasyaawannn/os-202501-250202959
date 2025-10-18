@@ -156,7 +156,7 @@ Pemahaman terhadap sistem operasi membantu dalam penggunaan komputer secara lebi
 2. Jelaskan perbedaan antara kernel mode dan user mode.  
    **Jawaban:**  Untuk kernel mode sendiri yaitu mode priviledged (berhak istimewa) di mana kernel sistem operasi (bagian inti OS seperti manajer memori, proses, dan driver perangkat) berjalan. Hanya kernel dan proses tepercaya yang bisa masuk ke mode ini. dan untuk user mode ini merupakan mode priviledged (berhak istimewa) di mana kernel sistem operasi (bagian inti OS seperti manajer memori, proses, dan driver perangkat) berjalan. Hanya kernel dan proses tepercaya yang bisa masuk ke mode ini.
 3. Sebutkan contoh OS dengan arsitektur monolithic dan microkernel. 
-   **Jawaban:**  untuk monolithic kernel contohnya yaitu Linux, Unix Tradisional, MS-DOS, AIX (versi awal) dan Solaris Awal. dan untuk microkernel sendiri contohnya Minix, QNX, Mach, Integrity dan L4
+   **Jawaban:**  untuk monolithic kernel contohnya yaitu Linux, Unix Tradisional, MS-DOS, AIX (versi awal) dan Solaris Awal. dan untuk microkernel sendiri contohnya Minix, QNX, Mach, Integrity dan L4.
 
 ---
 
