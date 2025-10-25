@@ -113,7 +113,9 @@ ls -l percobaan.txt
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+![Screenshot hasil](screenshots/linux_fs_1.png)
+
+![Screenshot hasil](screenshots/linux_fs_2.png)
 
 ---
 
