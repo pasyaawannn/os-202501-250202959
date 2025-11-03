@@ -192,7 +192,7 @@ Semua proses lain seperti ```dockerd```, ```containerd```, ```python```, dan ```
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+Kesimpulan yang didapat bahwa sistem operasi Linux mampu mengelola pengguna dan proses secara terstruktur dan aman. Melalui manajemen user, hak akses dapat diatur agar setiap pengguna hanya bisa melakukan tindakan sesuai perannya, sehingga keamanan sistem tetap terjaga. Sementara itu, manajemen proses memungkinkan pengguna untuk memantau, menjalankan, dan menghentikan program yang sedang aktif. Dengan memahami kedua konsep ini, kita dapat mengontrol aktivitas sistem dengan lebih efisien, menjaga kestabilan, serta meningkatkan keamanan dan kinerja Linux secara keseluruhan.
 
 ---
 
