@@ -87,9 +87,10 @@ Mahasiswa akan melakukan simulasi dan perbandingan hasil perhitungan kedua algor
 ## Kode / Perintah
 Tuliskan potongan kode atau perintah utama:
 ```bash
-uname -a
-lsmod | head
-dmesg | head
+Waiting Time (WT) = Start Time - Arrival Time
+Turnaround Time (TAT) = Finish Time - Arrival Time atau  Waiting Time + Burst Time
+Average Waiting Time (WT) = Total Waiting Time
+Average Turnaround Time (TAT) = Total Turnaround Time
 ```
 
 ---
