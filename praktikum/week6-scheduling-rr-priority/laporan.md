@@ -114,7 +114,7 @@ Turnaround Time (TAT) = WT + Burst Time
 
 Menganalisis algoritma Round Robin dengan parameter **Time Quantum (q) = 3.** Simulasi ini menunjukkan bahwa RR berhasil mencapai keadilan waktu (fairness) dengan menginterupsi proses panjang (P1, P3, P4) dan memberikannya jatah eksekusi secara bergantian.
 
-![Screenshot hasil](screenshots/Round_Robin _(RR).png)
+![Screenshot hasil](screenshots/Round_Robin_(RR).png)
 
 Simulasi eksekusi menggunakan Gantt Chart
 
