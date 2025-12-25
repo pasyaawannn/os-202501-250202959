@@ -237,10 +237,8 @@ Simulasi mempermudah pengujian dan analisis algoritma penjadwalan, terutama untu
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini? 
-  - Dari kemarin ga di up" keteter dong pak 
+- Apa bagian yang paling menantang minggu ini?  
 - Bagaimana cara Anda mengatasinya?  
-   - Sistem kebut
 
 ---
 
