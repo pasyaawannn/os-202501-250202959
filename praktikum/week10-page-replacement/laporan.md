@@ -1,33 +1,86 @@
+# Laporan Praktikum Minggu 10
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+Topik: Manajemen Memori – Page Replacement (FIFO & LRU)
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Pasya Awan Rizky Saputro 
+- **NIM**   : 250202959
+- **Kelas** : 1IKRB
 
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+Setelah menyelesaikan tugas ini, mahasiswa mampu:
+
+1. Mengimplementasikan algoritma page replacement FIFO dalam program.
+2. Mengimplementasikan algoritma page replacement LRU dalam program.
+3. Menjalankan simulasi page replacement dengan dataset tertentu.
+4. Membandingkan performa FIFO dan LRU berdasarkan jumlah _page fault_.
+5. Menyajikan hasil simulasi dalam laporan yang sistematis.
 
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+Pada praktikum minggu ini, mahasiswa akan mempelajari **manajemen memori virtual**, khususnya mekanisme page replacement.
+Fokus utama praktikum adalah memahami bagaimana sistem operasi mengganti halaman (page) di memori utama ketika terjadi page fault, serta membandingkan performa algoritma **FIFO (First-In First-Out)** dan **LRU (Least Recently Used)**.
+
+Mahasiswa akan mengimplementasikan **program simulasi page replacement**, menjalankan dataset uji, dan menyajikan hasil dalam bentuk tabel atau grafik.
+
+---
+
+## Ketentuan Teknis
+ - Bahasa pemrograman **bebas** (Python / C / Java / lainnya).
+ - Program berbasis **terminal** (tidak wajib GUI).
+ - Fokus penilaian pada **logika algoritma dan keakuratan hasil simulasi**.
+
+Struktur folder (sesuaikan dengan template repo):
+```bash
+praktikum/week10-page-replacement/
+├─ code/
+│  ├─ page_replacement.*
+│  └─ reference_string.txt
+├─ screenshots/
+│  └─ hasil_simulasi.png
+└─ laporan.md
+```
 
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
+1. **Menyiapkan Dataset**  
+Gunakan _reference_ string berikut sebagai contoh:
+   ```bash
+   7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2
+   ```  
+2. **Implementasi FIFO**
+   - Simulasikan penggantian halaman menggunakan algoritma FIFO.
+   - Catat setiap _page hit_ dan _page fault_.
+   - Hitung total _page fault_.
+3. **Implementasi LRU**
+   - Simulasikan penggantian halaman menggunakan algoritma LRU.
+   - Catat setiap _page hit_ dan _page fault_.
+   - Hitung total _page fault_.  
+4. **Eksekusi & Validasi**  
+   - Jalankan program untuk FIFO dan LRU.
+   - Pastikan hasil simulasi logis dan konsisten.
+   - Simpan screenshot hasil eksekusi.
+5. **Analisis Perbandingan**  
+Buat tabel perbandingan seperti berikut: 
+
+   | Algoritma | Jumlah Page Fault | Keterangan |
+   | --------- | ----------------- | ---------- |
+   | FIFO      | …                 | …          |
+   | LRU       | …                 | …          |
+   - Jelaskan mengapa jumlah _page fault_ bisa berbeda.
+   - Analisis algoritma mana yang lebih efisien dan alasannya.
+6. **Commit & Push**
+   ```bash
+   git add .
+   git commit -m "Minggu 10 - Page Replacement FIFO & LRU"
+   git push origin main
+   ```   
 
 ---
 
@@ -48,9 +101,8 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+- Jelaskan mengapa jumlah page fault bisa berbeda.
+- Analisis algoritma mana yang lebih efisien dan alasannya.
 
 ---
 
@@ -60,11 +112,11 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
+1. Apa perbedaan utama FIFO dan LRU?  
    **Jawaban:**  
-2. [Pertanyaan 2]  
+2. Mengapa FIFO dapat menghasilkan _Belady’s Anomaly_?  
    **Jawaban:**  
-3. [Pertanyaan 3]  
+3. Mengapa LRU umumnya menghasilkan performa lebih baik dibanding FIFO?  
    **Jawaban:**  
 
 ---
