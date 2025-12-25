@@ -5,9 +5,11 @@ Topik: Sinkronisasi Proses dan Masalah Deadlock
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : 
+    - PASYA AWAN RIZKY SAPUTRO (250202959)
+    - MOHAMMAD FATIKH MAHSUN (250202952)
+    - LUTHFI AULIA RAHMAN (250202948) 
+- **Kelas** : 1IKRB
 
 ---
 
@@ -79,7 +81,7 @@ Eksperimen ini dilakukan secara berkelompok, difokuskan pada:
      git add .
      git commit -m "Minggu 7 - Sinkronisasi Proses & Deadlock"
      git push origin main
-     ```   
+```   
 
 ---
 
