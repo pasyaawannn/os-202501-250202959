@@ -185,7 +185,7 @@ def main():
         print("\n[ERROR] Data dalam CSV harus berupa angka untuk Arrival dan Burst Time.")
 
 if __name__ == "__main__":
-    main()
+    main().
 ```
 
 ---
