@@ -9,7 +9,7 @@ Topik: Sinkronisasi Proses dan Masalah Deadlock
     - PASYA AWAN RIZKY SAPUTRO (250202959)
     - MOHAMMAD FATIKH MAHSUN (250202952)
     - LUTHFI AULIA RAHMAN (250202948) 
-- **Kelas** : 1IKRB
+- **Kelas** : 1IKRB.
 
 ---
 
