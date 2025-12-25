@@ -197,9 +197,9 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-1. **Jelaskan Alur Program.**  
+1. **Jelaskan Alur Program**.  
  Program dimulai dengan membaca data proses dari file ``dataset.csv``. Setiap baris data disimpan dalam struktur list berisi informasi ID proses, arrival time, dan burst time. Data proses kemudian diurutkan berdasarkan arrival time untuk menerapkan prinsip First Come First Served (FCFS). Selanjutnya, program mensimulasikan waktu kerja CPU secara berurutan dengan menghitung completion time, turnaround time, dan waiting time untuk setiap proses tanpa adanya interupsi antar proses. Setelah seluruh proses selesai dieksekusi, hasil simulasi ditampilkan dalam bentuk tabel beserta nilai rata-rata turnaround time dan waiting time.  
-2. **Bandingkan hasil simulasi dengan perhitungan manual.**  
+2. **Bandingkan hasil simulasi dengan perhitungan manual**.  
 Berdasarkan perhitungan manual algoritma FCFS, proses P1 dijalankan lebih dahulu karena memiliki arrival time paling kecil, diikuti oleh P2, P3, dan P4. Nilai completion time, turnaround time, dan waiting time yang dihasilkan program sama dengan hasil perhitungan manual. Rata-rata waiting time yang diperoleh adalah 8,75 ms dan rata-rata turnaround time sebesar 14,75 ms. Hal ini menunjukkan bahwa simulasi yang dibuat telah mengimplementasikan algoritma FCFS dengan benar.  
 3. **Kelebihan dan Keterbatasan Simulasi**
    - **Kelebihan**:  
