@@ -85,46 +85,137 @@ Buat tabel perbandingan seperti berikut:
 ---
 
 ## Kode / Perintah
-Tuliskan potongan kode atau perintah utama:
 ```bash
-uname -a
-lsmod | head
-dmesg | head
+# ==========================================
+# Page Replacement Simulation: FIFO & LRU
+# Dataset sudah ditentukan
+# ==========================================
+
+reference_string = [7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2]
+frame_size = 3
+
+
+def fifo(reference, frames_count):
+    frames = []
+    page_fault = 0
+
+    print("\n=== FIFO ===")
+    print("Page | Frames | Status")
+    print("-" * 30)
+
+    for page in reference:
+        if page in frames:
+            status = "Hit"
+        else:
+            page_fault += 1
+            status = "Fault"
+            if len(frames) < frames_count:
+                frames.append(page)
+            else:
+                frames.pop(0)
+                frames.append(page)
+
+        print(f"{page:>4} | {str(frames):<15} | {status}")
+
+    print(f"\nTotal Page Fault FIFO: {page_fault}")
+    return page_fault
+
+
+def lru(reference, frames_count):
+    frames = []
+    recent = []
+    page_fault = 0
+
+    print("\n=== LRU ===")
+    print("Page | Frames | Status")
+    print("-" * 30)
+
+    for page in reference:
+        if page in frames:
+            status = "Hit"
+            recent.remove(page)
+            recent.append(page)
+        else:
+            page_fault += 1
+            status = "Fault"
+            if len(frames) < frames_count:
+                frames.append(page)
+                recent.append(page)
+            else:
+                lru_page = recent.pop(0)
+                frames.remove(lru_page)
+                frames.append(page)
+                recent.append(page)
+
+        print(f"{page:>4} | {str(frames):<15} | {status}")
+
+    print(f"\nTotal Page Fault LRU: {page_fault}")
+    return page_fault
+
+
+if __name__ == "__main__":
+    fifo_fault = fifo(reference_string, frame_size)
+    lru_fault = lru(reference_string, frame_size)
+
+    print("\n=== PERBANDINGAN ===")
+    print("Algoritma | Page Fault")
+    print("----------------------")
+    print(f"FIFO      | {fifo_fault}")
+    print(f"LRU       | {lru_fault}")
+
 ```
 
 ---
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+1. **FIFO**
+![Screenshot hasil](screenshots/fifo.png)
+2. **RLU**
+![Screenshot hasil](screenshots/lru.png)
 
 ---
 
 ## Analisis
-- Jelaskan mengapa jumlah page fault bisa berbeda.
-- Analisis algoritma mana yang lebih efisien dan alasannya.
+1. **Analisis Perbandingan**
+    | Algoritma | Jumlah Page Fault | Keterangan                                   |
+    | --------- | ----------------- | -------------------------------------------- |
+    | FIFO      | 10                | Tidak mempertimbangkan histori penggunaan    |
+    | LRU       | 9                 | Mempertahankan halaman yang sering digunakan |
+2. **Jelaskan mengapa jumlah page fault bisa berbeda**.  
+Jumlah page fault bisa berbeda karena setiap algoritma page replacement menggunakan kriteria yang berbeda dalam memilih halaman yang akan diganti. FIFO mengganti halaman berdasarkan urutan kedatangan tanpa memperhatikan apakah halaman tersebut masih sering digunakan, sehingga halaman yang masih dibutuhkan dapat terhapus dan menimbulkan page fault tambahan. Sebaliknya, LRU mempertimbangkan riwayat penggunaan halaman, sehingga halaman yang sering diakses cenderung dipertahankan di memori.
+3. **Analisis algoritma mana yang lebih efisien dan alasannya**.   
+algoritma LRU lebih efisien dibandingkan FIFO karena menghasilkan jumlah page fault yang lebih sedikit. Hal ini terjadi karena LRU lebih sesuai dengan pola akses program yang umumnya mengakses halaman yang sama dalam waktu berdekatan, sehingga penggunaan memori menjadi lebih optimal meskipun implementasinya lebih kompleks.
+
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+1. Praktikum ini menunjukkan bahwa algoritma FIFO dan LRU memiliki cara kerja yang berbeda dalam mengganti halaman, sehingga menghasilkan jumlah page fault yang berbeda meskipun menggunakan reference string dan jumlah frame yang sama.
+2. Berdasarkan hasil simulasi, algoritma **LRU lebih efisien dibandingkan FIFO** karena mempertimbangkan penggunaan halaman terbaru, sehingga dapat mengurangi terjadinya page fault.
+3. Melalui simulasi menggunakan program, proses kerja FIFO dan LRU menjadi lebih mudah dipahami karena setiap pergantian halaman dan page fault dapat diamati secara langsung, bukan hanya melalui perhitungan manual
 
 ---
 
 ## Quiz
 1. Apa perbedaan utama FIFO dan LRU?  
    **Jawaban:**  
+   FIFO mengganti halaman yang paling lama masuk ke memori, tanpa melihat apakah halaman tersebut masih sering digunakan, sedangkan LRU mengganti halaman yang paling lama tidak digunakan berdasarkan riwayat akses
 2. Mengapa FIFO dapat menghasilkan _Belady’s Anomaly_?  
-   **Jawaban:**  
+   **Jawaban:** 
+   Karena FIFO tidak mempertimbangkan pola penggunaan halaman, penambahan jumlah frame justru bisa menyebabkan halaman penting terhapus lebih cepat, sehingga jumlah page fault malah meningkat. 
 3. Mengapa LRU umumnya menghasilkan performa lebih baik dibanding FIFO?  
    **Jawaban:**  
+   LRU mempertahankan halaman yang sering dan baru digunakan, sehingga lebih sesuai dengan pola akses program yang bersifat lokalitas, dan biasanya menghasilkan jumlah page fault yang lebih sedikit.
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+  Kelupaan cara commit
+- Bagaimana cara Anda mengatasinya?   
+  Tanya AI
 
 ---
 
