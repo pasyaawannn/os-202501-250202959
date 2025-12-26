@@ -215,7 +215,7 @@ Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?  
   Kelupaan cara commit
 - Bagaimana cara Anda mengatasinya?   
-  Tanya AI
+  Tanya AI.
 
 ---
 
