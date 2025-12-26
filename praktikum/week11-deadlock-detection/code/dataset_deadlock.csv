@@ -1,0 +1,4 @@
+Process,Allocation,Request
+Process1,R1,R2
+Process2,R2,R3
+Process3,R3,R1
