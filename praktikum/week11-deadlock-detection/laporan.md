@@ -246,7 +246,7 @@ Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?  
  Belum sangat paham" betul materi ini
 - Bagaimana cara Anda mengatasinya?  
-  Jelasin Ulang Dongs Pakkk
+  Jelasin Ulang Dongs Pakkk.
 
 ---
 
