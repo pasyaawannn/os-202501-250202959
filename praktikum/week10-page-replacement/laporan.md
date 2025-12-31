@@ -139,7 +139,8 @@ python page_replacement.py
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/hasil_simulasi.png)
+![Screenshot hasil](screenshots/hasil_simulasi_1.png)
+![Screenshot hasil](screenshots/hasil_simulasi_2.png)
 
 ---
 
