@@ -97,7 +97,29 @@ is_safe, deadlocked, safe_seq = detect_deadlock(processes, allocation, request, 
 ---
 
 ## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
+Dataset yang digunakan (kasus studi rumah sakit):
+
+| Proses                  | Allocation    | Request       |
+|--------------------------|---------------|---------------|
+| Registrasi Pasien        | Dokter Umum   | Perawat       |
+| Pemeriksaan              | Perawat       | Ruang Operasi |
+| Operasi                  | Ruang Operasi | Dokter Umum   |
+| Perawatan Pasca Operasi  | Dokter Umum   | Ruang Operasi |
+
+Output program:
+```
+=== HASIL DETEKSI DEADLOCK ===
++-------------------------+----------+
+| Proses                  | Status   |
++=========================+==========+
+| Registrasi Pasien       | Deadlock |
+| Pemeriksaan             | Deadlock |
+| Operasi                 | Deadlock |
+| Perawatan Pasca Operasi | Deadlock |
+
+>>> Deadlock terdeteksi! Proses yang terlibat: ['Registrasi Pasien', 'Pemeriksaan', 'Operasi', 'Perawatan Pasca Operasi']
+```
+
 ![Screenshot hasil](screenshots/hasil_deteksi.png)
 
 ---
