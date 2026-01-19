@@ -111,7 +111,7 @@ lscpu: Menampilkan informasi detail CPU.
    - Manajemen Memori: Penggunaan RAM jauh lebih lega, yaitu 2.2 GB dari 4.9 GB (44.5%).
    - Optimalisasi Cache: Sistem secara otomatis mengalokasikan 3.0 GB untuk Cache, yang berfungsi mempercepat akses data dan performa OS.
    - Status Swap: Tetap not available karena masih dalam mode Live Session (belum instalasi permanen).
-   - Kesimpulan: Penambahan sumber daya ini secara signifikan meningkatkan stabilitas sistem. Sistem memiliki ruang napas yang cukup (sisa RAM ~2.7 GB) untuk menjalankan multitasking tanpa risiko crash. 
+   - Kesimpulan: Penambahan sumber daya ini secara signifikan meningkatkan stabilitas sistem. Sistem memiliki ruang napas yang cukup (sisa RAM ~2.7 GB) untuk menjalankan multitasking tanpa risiko crash.
 3. **Isolasi Sistem Host dan Guest pada Virtual Machine.**
    - Virtual Machine menyediakan isolasi dengan cara memisahkan sumber daya host melalui hypervisor. Guest hanya berinteraksi dengan perangkat keras virtual, sehingga tidak bisa langsung mengakses hardware asli. Dengan mekanisme ini, aktivitas guest tidak memengaruhi host maupun VM lain.
      
