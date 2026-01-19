@@ -1,0 +1,11 @@
+# Gunakan image Python yang ringan
+FROM python:3.14-slim
+
+# Set direktori kerja di dalam container
+WORKDIR /app
+
+# Copy file source code ke dalam container
+COPY app.py .
+
+# Command default saat container dijalankan
+CMD ["python", "app.py"]

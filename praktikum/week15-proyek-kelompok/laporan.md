@@ -1,28 +1,58 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+# Laporan Praktikum Minggu 15
+Topik: Proyek Kelompok – Mini Simulasi Sistem Operasi (Scheduling + Memory + Container)
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Pasya Awan Rizky Saputro  
+- **NIM**   : 250202959  
+- **Kelas** : 1IKRB
 
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+Setelah menyelesaikan proyek ini, mahasiswa mampu:
+
+1. Bekerja kolaboratif dalam tim dengan pembagian peran yang jelas.
+2. Mengintegrasikan beberapa konsep sistem operasi dalam satu aplikasi sederhana.
+3. Mengelola proyek menggunakan Git (branch/PR/commit yang rapi).
+4. Menyusun dokumentasi dan laporan proyek yang sistematis.
+5. Melakukan presentasi dan demo hasil proyek.
 
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+Pada pertemuan ini, mahasiswa mengerjakan **proyek kelompok** untuk mengintegrasikan materi praktikum sebelumnya menjadi satu mini-aplikasi yang **bisa didemokan dan dipresentasikan**.
+
+Setiap kelompok membangun aplikasi berbasis terminal yang:
+
+Mensimulasikan minimal **2 konsep OS** (contoh: CPU scheduling + page replacement, atau scheduling + deadlock detection).
+Menyediakan input dataset sederhana dan menampilkan output berupa tabel/ringkasan metrik.
+Dapat dijalankan melalui **Docker** untuk memastikan reproducible environment.
 
 ---
 
+## Ketentuan Teknis
+- **Kelompok**: 3–5 mahasiswa.
+- Bahasa pemrograman bebas (Python / C / Java / lainnya), aplikasi berbasis terminal.
+- Wajib menggunakan Git kolaboratif (minimal: pembagian branch per fitur dan merge terkontrol).
+- Wajib menyediakan cara jalan yang mudah (minimal ``README.md`` + perintah run) dan **demo via Docker**.  
+Struktur folder (sesuaikan dengan template repo):
+```bash
+praktikum/week15-proyek-kelompok/
+├─ code/
+│  ├─ (source code proyek)
+│  ├─ Dockerfile
+│  ├─ README.md
+│  └─ data/ (opsional)
+├─ screenshots/
+│  ├─ demo_run.png
+│  └─ hasil_tabel.png
+└─ laporan.md
+```
+
+---
 ## Langkah Praktikum
 1. Langkah-langkah yang dilakukan.  
 2. Perintah yang dijalankan.  

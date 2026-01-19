@@ -1,0 +1,17 @@
+# Gunakan base image Python yang ringan
+FROM python:3.14-slim
+
+# Set working directory di dalam container
+WORKDIR /app
+
+# Copy file requirements dulu (untuk caching layer)
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy seluruh source code ke dalam container
+COPY . .
+
+# Perintah default saat container dijalankan
+CMD ["python", "main.py"]
