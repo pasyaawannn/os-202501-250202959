@@ -100,19 +100,19 @@ lscpu: Menampilkan informasi detail CPU.
 ---
 
 ## Analisis
-1. **Analisis CPU 1 Ram 2**
+1. **Analisis CPU 1 Ram 2.**
    - Status CPU: Beban kerja sangat kritis mencapai 97.6%. Hal ini terjadi karena hanya 1 Core yang menangani seluruh proses sistem dan aplikasi sekaligus.
    - Status RAM: Penggunaan memori sangat tinggi, yaitu 1.9 GB dari 2.0 GB (95.2%). Sistem hampir kehabisan ruang untuk menjalankan proses baru.
    - Status Swap: Terdeteksi not available (tidak tersedia). Tanpa Swap, sistem berisiko crash atau freeze total jika RAM penuh karena tidak ada memori cadangan di disk.
    - Kesimpulan: Spesifikasi ini menyebabkan bottleneck. Sistem tidak stabil untuk multitasking berat karena kurangnya alokasi sumber daya hardware.
-2. **Analisis CPU 2 Ram 4**
+2. **Analisis CPU 2 Ram 4.**
    - Kapasitas CPU: Perintah lscpu mengonfirmasi alokasi meningkat menjadi 2 Core CPU (CPU0 & CPU1).
    - Beban Kerja CPU: Beban terdistribusi ke dua core (CPU1: 90.4% dan CPU2: 92.4%). Meskipun masih tinggi, sistem lebih responsif karena beban tidak menumpuk di satu titik.
    - Manajemen Memori: Penggunaan RAM jauh lebih lega, yaitu 2.2 GB dari 4.9 GB (44.5%).
    - Optimalisasi Cache: Sistem secara otomatis mengalokasikan 3.0 GB untuk Cache, yang berfungsi mempercepat akses data dan performa OS.
    - Status Swap: Tetap not available karena masih dalam mode Live Session (belum instalasi permanen).
    - Kesimpulan: Penambahan sumber daya ini secara signifikan meningkatkan stabilitas sistem. Sistem memiliki ruang napas yang cukup (sisa RAM ~2.7 GB) untuk menjalankan multitasking tanpa risiko crash. 
-3. **Isolasi Sistem Host dan Guest pada Virtual Machine**
+3. **Isolasi Sistem Host dan Guest pada Virtual Machine.**
    - Virtual Machine menyediakan isolasi dengan cara memisahkan sumber daya host melalui hypervisor. Guest hanya berinteraksi dengan perangkat keras virtual, sehingga tidak bisa langsung mengakses hardware asli. Dengan mekanisme ini, aktivitas guest tidak memengaruhi host maupun VM lain.
      
 
