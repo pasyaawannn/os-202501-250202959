@@ -87,7 +87,7 @@ Buat program sederhana di folder ``code/`` (bahasa bebas) yang:
    - Jalankan container (tanpa --rm jika perlu) dan amati penggunaan resource:
      ```bash
      docker stats
-     ```
+     ``` 
    - Ambil screenshot output eksekusi dan/atau ```docker stats```.       
 7. **Commit & Push**
    ```bash
