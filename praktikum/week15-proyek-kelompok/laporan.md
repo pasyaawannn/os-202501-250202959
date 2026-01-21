@@ -12,7 +12,7 @@
 ### 1. Latar Belakang
 Manajemen proses dan memori merupakan fungsi vital dalam sistem operasi. Konsep *First-Come First-Served* (FCFS) pada penjadwalan CPU dan *Least Recently Used* (LRU) pada manajemen memori seringkali dipelajari secara teoritis. Proyek ini bertujuan untuk memvisualisasikan mekanisme tersebut melalui simulasi berbasis terminal, menggunakan studi kasus aktivitas aplikasi nyata (seperti browser, pemutar musik, dan pengolah kata) agar lebih mudah dipahami.
 
-### 2. Tujuan
+### 2. Tujuan.
 * Mengimplementasikan dua modul utama sistem operasi: CPU Scheduling (FCFS) dan Memory Management (LRU).
 * Membangun lingkungan aplikasi yang *reproducible* menggunakan teknologi Docker.
 * Menerapkan kolaborasi tim menggunakan Git (pembagian *branch* fitur dan *merge*).
