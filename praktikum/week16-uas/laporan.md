@@ -1,80 +1,46 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+# LAPORAN UAS
 
----
+## Judul Proyek: Mini Simulasi Sistem Operasi – CPU Scheduling FCFS Dan Memory Management LRU.
 
-## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+### Di Sususn Oleh:
+1. **Gilang Ananda Putra - 250202939 - Project Leader**
+2. **Pasya Awan Rizky Saputro - 250202959 - Developer CPU**
+3. **Faizal Muzaki - 250202937 - Developer Memory**
+4. **Yusuf Anwar - 250202971 - Developer Operations & Documentation**
 
----
 
-## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+A. PENDAHULUAN
+   - Latar Belakang
+   - Tujuan Proyek
 
----
+B. DESKRIPSI SISTEM
+   - Sistem Yang Di Bangun
+   - Ruang Lingkup
+   - Fitur Utama
 
-## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+C. Algoritma Sistem Operasi
+   - FCFS (First Come First Serve)
+   - Round Robbin   
+   - SJF
+   - Priority Scheduling
 
----
+D. Implementasi Sistem
+   - Alur Program
+   - Lingkungan Eksekusi
 
-## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
+E. Hasil Pengujian
 
----
+F. Analisis Performa dan Keterbatasan
+   - Performa
+   - Keterbatasan
 
-## Kode / Perintah
-Tuliskan potongan kode atau perintah utama:
-```bash
-uname -a
-lsmod | head
-dmesg | head
-```
+G. Kesimpulan
 
----
-
-## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
-
----
-
-## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
-
----
-
-## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
-
----
-
-## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
-
----
-
-## Refleksi Diri
-Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
-
----
-
-**Credit:**  
-_Template laporan praktikum Sistem Operasi (SO-202501) – Universitas Putra Bangsa_
+###  Lampiran Bukti Pendukung
+- Slide presentasi.
+- Screenshot demo eksekusi container.
+- Manual penggunaan sistem.
+- Repositori GitHub berisi kode, README, dan riwayat commit.
+- Potongan kode inti (implementasi FCFS & Round Robin).
+- Pembagian peran tim.

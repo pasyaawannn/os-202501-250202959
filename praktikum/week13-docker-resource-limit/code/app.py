@@ -26,7 +26,7 @@ def cpu_stress_test(n=50000):
     
     # Komputasi berat
     result = 1
-    for i in range (1, n + 1):
+    for i in range(1, n + 1):
         result = i * i 
     
     end_time = time.time()
