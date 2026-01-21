@@ -150,9 +150,4 @@ Docker mengatasi masalah *"It works on my machine"*. Docker membungkus aplikasi 
 Modul **Memory Management (LRU)** akan paling terdampak.
 
 * **Alasan:** CPU FCFS hanya melakukan pengurutan satu kali di awal (). Sedangkan Memory LRU harus melakukan operasi pencarian dan manipulasi *list* (hapus elemen lama, tambah elemen baru) pada **setiap langkah** request yang masuk. Jika input menjadi 10x lipat, beban komputasi Memory Management meningkat linear seiring jumlah request (), yang lebih berat secara operasional dibanding sekadar penjumlahan waktu di CPU.
-
 ---
-
-```
-
-```
