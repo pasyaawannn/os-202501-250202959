@@ -24,29 +24,29 @@ Dalam sistem operasi, proses sering kali harus berbagi resource terbatas seperti
 
 2. **Rumusan Masalah**  
 Berdasarkan latar belakang yang telah dijelaskan, maka permasalahan yang akan dibahas dalam praktikum ini dapat dirumuskan sebagai berikut:
-   1. Bagaimana cara memodelkan kondisi deadlock pada sistem multi-threading menggunakan simulasi Python?
-   2. Bagaimana algoritma deadlock detection dapat digunakan untuk mengidentifikasi proses yang terjebak dalam kondisi deadlock?
-   3. Sejauh mana efektivitas deadlock detection dalam membantu sistem operasi melakukan evaluasi dan penanganan terhadap deadlock?
+   - Bagaimana cara memodelkan kondisi deadlock pada sistem multi-threading menggunakan simulasi Python?
+   - Bagaimana algoritma deadlock detection dapat digunakan untuk mengidentifikasi proses yang terjebak dalam kondisi deadlock?
+   - Sejauh mana efektivitas deadlock detection dalam membantu sistem operasi melakukan evaluasi dan penanganan terhadap deadlock?
 
 3. **Tujuan**  
 Praktikum ini dirancang untuk mencapai beberapa tujuan berikut:
-   1. Mengimplementasikan simulasi kondisi deadlock menggunakan bahasa pemrograman Python dengan memanfaatkan thread dan lock.
-   2. Menerapkan algoritma deadlock detection untuk mengidentifikasi proses yang terjebak dalam kondisi deadlock.
-   3. Mengevaluasi efektivitas algoritma deadlock detection dalam mendeteksi dan menganalisis kondisi deadlock.
-   4. Menyajikan hasil eksperimen dalam bentuk tabel dan grafik untuk mendukung analisis ilmiah.
+   - Mengimplementasikan simulasi kondisi deadlock menggunakan bahasa pemrograman Python dengan memanfaatkan thread dan lock.
+   - Menerapkan algoritma deadlock detection untuk mengidentifikasi proses yang terjebak dalam kondisi deadlock.
+   - Mengevaluasi efektivitas algoritma deadlock detection dalam mendeteksi dan menganalisis kondisi deadlock.
+   - Menyajikan hasil eksperimen dalam bentuk tabel dan grafik untuk mendukung analisis ilmiah.
 
 ## B. Methods
 1. **Lingkungan Uji**
-   1. Perangkat keras:
+   - Perangkat keras:
       - Laptop ASUS VivoBook X415MA
       - Prosesor: Intel(R) Celeron(R) N4020 CPU @ 1.10 GHz
       - RAM: 8 GB (7,83 GB usable)
       - Sistem: 64-bit operating system, x64-based processor
-   2. Perangkat lunak:
+   - Perangkat lunak:
       - Sistem operasi: Windows 11
       - Bahasa pemrograman: Python 3.14
       - Visual Studio Code
-   3. Struktur Folder Praktikum
+   - Struktur Folder Praktikum
       ```bash
       praktikum/week14-laporan-imrad/
       ├─ code/
@@ -57,27 +57,27 @@ Praktikum ini dirancang untuk mencapai beberapa tujuan berikut:
       └─ laporan.md
       ```   
 2. **Langkah Eksperimen**
-   1. Menyusun dataset proses dan resource pada file datatest.py.
-   2. Mengimplementasikan algoritma deadlock detection pada file deadlock_detection.py.
-   3. Menjalankan simulasi eksekusi: proses yang request-nya terpenuhi akan berjalan, melepaskan resource, dan menambah available.
-   4. Mencatat urutan proses yang berhasil dieksekusi (safe sequence).
-   5. Mengidentifikasi proses yang tidak dapat melanjutkan eksekusi (deadlock).
-   6. Menyajikan hasil dalam bentuk tabel dan screenshot terminal.
+   - Menyusun dataset proses dan resource pada file datatest.py.
+   - Mengimplementasikan algoritma deadlock detection pada file deadlock_detection.py.
+   - Menjalankan simulasi eksekusi: proses yang request-nya terpenuhi akan berjalan, melepaskan resource, dan menambah available.
+   - Mencatat urutan proses yang berhasil dieksekusi (safe sequence).
+   - Mengidentifikasi proses yang tidak dapat melanjutkan eksekusi (deadlock).
+   - Menyajikan hasil dalam bentuk tabel dan screenshot terminal.
 3. **Parameter / Datatest**   
-   1. Jumlah proses: 5 (P1–P5).
-   2. Jumlah resource: 3 (R1, R2, R3).
-   3. Allocation matrix: menunjukkan resource yang sedang digunakan tiap proses.
-   4. Request matrix: menunjukkan resource tambahan yang masih dibutuhkan tiap proses.
-   5. Available vector: jumlah resource yang tersedia di sistem.
-   6. Dataset disimpan dalam file datatest.py agar mudah dimodifikasi dan dipanggil oleh program utama.
+   - Jumlah proses: 5 (P1–P5).
+   - Jumlah resource: 3 (R1, R2, R3).
+   - Allocation matrix: menunjukkan resource yang sedang digunakan tiap proses.
+   - Request matrix: menunjukkan resource tambahan yang masih dibutuhkan tiap proses.
+   - Available vector: jumlah resource yang tersedia di sistem.
+   - Dataset disimpan dalam file datatest.py agar mudah dimodifikasi dan dipanggil oleh program utama.
 4. **Cara Pengukuran**
-   1. Indikator eksekusi berhasil: proses masuk ke safe sequence dan melepaskan resource.
-   2. Indikator deadlock: proses tidak dapat dijalankan karena request > available hingga simulasi berhenti.
-   3. Data yang dicatat:
+   - Indikator eksekusi berhasil: proses masuk ke safe sequence dan melepaskan resource.
+   - Indikator deadlock: proses tidak dapat dijalankan karena request > available hingga simulasi berhenti.
+   - Data yang dicatat:
       - Urutan proses yang berhasil dieksekusi.
       - Daftar proses yang terjebak deadlock.
       - Kondisi resource available setelah tiap eksekusi.
-   4. Penyajian hasil:
+   - Penyajian hasil:
       - Tabel status proses (Selesai vs Deadlock).
       - Screenshot terminal eksekusi program.
       - (Opsional) grafik bar chart status proses untuk visualisasi.
@@ -99,41 +99,41 @@ Praktikum ini dirancang untuk mencapai beberapa tujuan berikut:
 Hasil dari pemrograman python dan dijalankan diterminal menghasilkan seperti gambar berikut:
    ![Screenshot hasil](screenshots/hasil_eksekusi.png)
 3. **Ringkasan Temuan**
-   1. Dari 5 proses yang diuji, hanya P3 yang berhasil dieksekusi penuh dan masuk ke safe sequence.
-   2. Empat proses lainnya (P1, P2, P4, P5) terjebak dalam kondisi deadlock karena permintaan resource mereka tidak dapat dipenuhi oleh sistem.
-   3. Deadlock detection berhasil mengidentifikasi proses yang tidak bisa melanjutkan eksekusi, sehingga sistem dapat mengambil langkah penanganan (misalnya menghentikan proses deadlock atau melakukan recovery).
-   4. Hasil ini menunjukkan pentingnya mekanisme deteksi deadlock dalam sistem operasi untuk menjaga stabilitas dan mencegah kebuntuan eksekusi.
+   - Dari 5 proses yang diuji, hanya P3 yang berhasil dieksekusi penuh dan masuk ke safe sequence.
+   - Empat proses lainnya (P1, P2, P4, P5) terjebak dalam kondisi deadlock karena permintaan resource mereka tidak dapat dipenuhi oleh sistem.
+   - Deadlock detection berhasil mengidentifikasi proses yang tidak bisa melanjutkan eksekusi, sehingga sistem dapat mengambil langkah penanganan (misalnya menghentikan proses deadlock atau melakukan recovery).
+   - Hasil ini menunjukkan pentingnya mekanisme deteksi deadlock dalam sistem operasi untuk menjaga stabilitas dan mencegah kebuntuan eksekusi.
 
 ## D. Pembahasan (Discussion) 
 1. **Interpretasi Hasil**
-   1. Hasil simulasi menunjukkan bahwa semua proses (P1–P5) berhasil dieksekusi penuh tanpa terjadi deadlock.
-   2. Algoritma deadlock detection mampu mengidentifikasi urutan eksekusi yang aman (safe sequence) yaitu ``['P3', 'P5', 'P1', 'P2', 'P4']``.
-   3. Hal ini menandakan sistem berada dalam safe state, di mana resource dapat dialokasikan secara bertahap sehingga tidak ada proses yang terjebak.
-   4. Proses eksekusi yang ditampilkan di terminal memperlihatkan bagaimana setiap proses yang request-nya terpenuhi dapat berjalan, melepaskan resource, dan menambah available untuk proses berikutnya.
+   - Hasil simulasi menunjukkan bahwa semua proses (P1–P5) berhasil dieksekusi penuh tanpa terjadi deadlock.
+   - Algoritma deadlock detection mampu mengidentifikasi urutan eksekusi yang aman (safe sequence) yaitu ``['P3', 'P5', 'P1', 'P2', 'P4']``.
+   - Hal ini menandakan sistem berada dalam safe state, di mana resource dapat dialokasikan secara bertahap sehingga tidak ada proses yang terjebak.
+   - Proses eksekusi yang ditampilkan di terminal memperlihatkan bagaimana setiap proses yang request-nya terpenuhi dapat berjalan, melepaskan resource, dan menambah available untuk proses berikutnya.
 2. **Keterbatasan**
-   1. **Skala simulasi terbatas**: hanya menggunakan 5 proses dan 3 resource, sehingga belum mencerminkan kompleksitas sistem operasi nyata dengan puluhan atau ratusan proses.
-   2. **Model sederhana**: simulasi hanya menggunakan matriks allocation, request, dan available. Belum ada faktor lain seperti prioritas proses, waktu eksekusi, atau interaksi antar-proses yang lebih kompleks.
-   3. **Tidak ada recovery**: simulasi hanya mendeteksi kondisi aman atau deadlock, tetapi tidak mengimplementasikan strategi penanganan (misalnya preemption atau termination).
-   4. **Lingkungan uji terbatas**: dijalankan pada satu perangkat (ASUS VivoBook X415MA dengan prosesor Celeron N4020), sehingga hasil eksekusi mungkin berbeda jika diuji pada sistem dengan spesifikasi lebih tinggi atau arsitektur berbeda
+   - **Skala simulasi terbatas**: hanya menggunakan 5 proses dan 3 resource, sehingga belum mencerminkan kompleksitas sistem operasi nyata dengan puluhan atau ratusan proses.
+   - **Model sederhana**: simulasi hanya menggunakan matriks allocation, request, dan available. Belum ada faktor lain seperti prioritas proses, waktu eksekusi, atau interaksi antar-proses yang lebih kompleks.
+   - **Tidak ada recovery**: simulasi hanya mendeteksi kondisi aman atau deadlock, tetapi tidak mengimplementasikan strategi penanganan (misalnya preemption atau termination).
+   - **Lingkungan uji terbatas**: dijalankan pada satu perangkat (ASUS VivoBook X415MA dengan prosesor Celeron N4020), sehingga hasil eksekusi mungkin berbeda jika diuji pada sistem dengan spesifikasi lebih tinggi atau arsitektur berbeda
 3. **Perbandingan dengan Teori / Ekspektasi**
-   1. Teori Deadlock menyatakan bahwa deadlock terjadi bila empat kondisi terpenuhi: mutual exclusion, hold and wait, no preemption, circular wait.
-   2. Dalam simulasi ini, meskipun kondisi tersebut secara teoritis bisa terjadi, algoritma deadlock detection berhasil menemukan urutan eksekusi yang aman sehingga deadlock tidak muncul.
-   3. **Ekspektasi awal**: ada kemungkinan beberapa proses akan terjebak deadlock (seperti pada dataset sebelumnya).
-   4. **Hasil aktual**: semua proses berhasil dieksekusi, menunjukkan bahwa dataset yang digunakan berada dalam kondisi aman.
-   5. Hal ini sesuai dengan teori safe state dalam Banker’s Algorithm, di mana sistem dapat mengalokasikan resource secara bertahap sehingga semua proses dapat diselesaikan.
+   - Teori Deadlock menyatakan bahwa deadlock terjadi bila empat kondisi terpenuhi: mutual exclusion, hold and wait, no preemption, circular wait.
+   - Dalam simulasi ini, meskipun kondisi tersebut secara teoritis bisa terjadi, algoritma deadlock detection berhasil menemukan urutan eksekusi yang aman sehingga deadlock tidak muncul.
+   - **Ekspektasi awal**: ada kemungkinan beberapa proses akan terjebak deadlock (seperti pada dataset sebelumnya).
+   - **Hasil aktual**: semua proses berhasil dieksekusi, menunjukkan bahwa dataset yang digunakan berada dalam kondisi aman.
+   - Hal ini sesuai dengan teori safe state dalam Banker’s Algorithm, di mana sistem dapat mengalokasikan resource secara bertahap sehingga semua proses dapat diselesaikan.
 
 ## E. Penutup
 1. **Kesimpulan**
-   1. Simulasi deadlock detection dengan 5 proses dan 3 resource menunjukkan bahwa sistem berada dalam kondisi aman (safe state).
-   2. Semua proses (P1–P5) berhasil dieksekusi penuh tanpa terjadi deadlock, dengan safe sequence ``['P3', 'P5', 'P1', 'P2', 'P4']``.
-   3. Algoritma deadlock detection terbukti efektif dalam mengidentifikasi urutan eksekusi yang aman, sehingga sistem dapat menghindari kebuntuan.
-   4. Hasil ini mendukung teori Banker’s Algorithm yang menyatakan bahwa sistem dapat tetap aman jika resource dialokasikan secara bertahap sesuai kebutuhan proses.
+   - Simulasi deadlock detection dengan 5 proses dan 3 resource menunjukkan bahwa sistem berada dalam kondisi aman (safe state).
+   - Semua proses (P1–P5) berhasil dieksekusi penuh tanpa terjadi deadlock, dengan safe sequence ``['P3', 'P5', 'P1', 'P2', 'P4']``.
+   - Algoritma deadlock detection terbukti efektif dalam mengidentifikasi urutan eksekusi yang aman, sehingga sistem dapat menghindari kebuntuan.
+   - Hasil ini mendukung teori Banker’s Algorithm yang menyatakan bahwa sistem dapat tetap aman jika resource dialokasikan secara bertahap sesuai kebutuhan proses.
 2. **Saran**
-   1. Pengembangan skala simulasi: Gunakan jumlah proses dan resource yang lebih banyak untuk mencerminkan kompleksitas sistem nyata.
-   2. Integrasi faktor tambahan: Tambahkan variabel seperti prioritas proses, waktu eksekusi, atau interaksi antar-proses agar simulasi lebih realistis.
-   3. Implementasi recovery: Selain deteksi, tambahkan mekanisme penanganan deadlock (misalnya preemption atau termination) untuk menguji strategi pemulihan.
-   4. Visualisasi hasil: Gunakan grafik bar chart atau diagram resource allocation untuk memperjelas status proses dan kondisi sistem.
-   5. Uji lintas perangkat: Jalankan simulasi pada perangkat dengan spesifikasi berbeda untuk melihat pengaruh performa hardware terhadap eksekusi algoritma
+   - Pengembangan skala simulasi: Gunakan jumlah proses dan resource yang lebih banyak untuk mencerminkan kompleksitas sistem nyata.
+   - Integrasi faktor tambahan: Tambahkan variabel seperti prioritas proses, waktu eksekusi, atau interaksi antar-proses agar simulasi lebih realistis.
+   - Implementasi recovery: Selain deteksi, tambahkan mekanisme penanganan deadlock (misalnya preemption atau termination) untuk menguji strategi pemulihan.
+   - Visualisasi hasil: Gunakan grafik bar chart atau diagram resource allocation untuk memperjelas status proses dan kondisi sistem.
+   - Uji lintas perangkat: Jalankan simulasi pada perangkat dengan spesifikasi berbeda untuk melihat pengaruh performa hardware terhadap eksekusi algoritma
 
 ## F. Quiz
 1. Mengapa format IMRAD membantu membuat laporan praktikum lebih ilmiah dan mudah dievaluasi?  
